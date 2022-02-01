@@ -2,15 +2,14 @@
 
 void ft_bzero(void *str, size_t n)
 {
-	unsigned int i;
-	char *str_aux;
+	size_t i;
 	
 	i=0;
-	str_aux=str;
-
+	if(!str)
+		return ;
 	while(i<n)
 	{
-		str_aux[i]='\0';
+		*(char *)(str+i)=0;
 		i++;
 	}
 }

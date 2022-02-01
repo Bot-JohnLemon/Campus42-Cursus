@@ -9,7 +9,7 @@ int main(void)
 	char *str;
 	int n;
 
-	n=5;
+	n=2;
 	str= "hola";
 	ft_bzero(str,n);
 	return (0);
