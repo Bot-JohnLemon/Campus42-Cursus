@@ -1,15 +1,15 @@
 #include <stdlib.h>
 
-void ft_bzero(void *str, size_t n)
+void	ft_bzero(void *str, size_t n)
 {
-	size_t i;
-	
-	i=0;
-	if(!str)
+	size_t	i;
+
+	i = 0;
+	if (!str)
 		return ;
-	while(i<n)
+	while (i < n)
 	{
-		*(char *)(str+i)=0;
+		*(char *)(str + i) = 0;
 		i++;
 	}
 }

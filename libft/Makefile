@@ -29,10 +29,6 @@ all: $(NAME)
 $(NAME): $(OBJ)
 		ar rcs $(NAME) $(OBJ)
 
-#This is the full comand to compile everything
-$(OBJ): $(FILES)
-		$(CC) $(CFLAGS) $(FILES)
-
 #This the clean rule on the Makefile
 clean:
 	$(RM) $(OBJ)
@@ -42,8 +38,7 @@ fclean:	clean
 	$(RM) $(NAME)
 
 #This will remake the bin file
-re:
-	fclean $(NAME)
+re: fclean all
 
 #This avoids the relinking
 .PHONY:	all clean fclean re
