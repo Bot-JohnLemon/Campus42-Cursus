@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_split.c                                         :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: dgomez-p <dgomez-p@student.42barcel>       +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/03/09 15:34:00 by dgomez-p          #+#    #+#             */
+/*   Updated: 2022/03/09 15:34:01 by dgomez-p         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "libft.h"
 
 static char
@@ -15,7 +27,7 @@ static char
 			total++;
 		i++;
 	}
-	split = (char**)malloc(sizeof(s) * (total + 2));
+	split = (char **)malloc(sizeof(s) * (total + 2));
 	if (!split)
 		return (NULL);
 	return (split);
@@ -82,7 +94,8 @@ char
 {
 	char	**split;
 
-	if (!(split = ft_alloc_split(s, c)))
+	split = ft_alloc_split(s, c);
+	if (!split)
 		return (NULL);
 	if (!ft_split_by_char(split, s, c))
 		return (NULL);

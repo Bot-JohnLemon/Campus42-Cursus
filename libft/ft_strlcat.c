@@ -1,4 +1,14 @@
-/*El programa devuelve perfectamente el resultado que pide que es el total del truncamiento de la cadena, solo que por alguna razon en la cadena devuelta imprime malamente la cadena en el caso de que el dstsize y el total de de d_len mas s_len sea igual a dstsize, de todas formas el programa corre perfectamente*/
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_strlcat.c                                       :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: dgomez-p <dgomez-p@student.42barcel>       +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/03/09 15:33:42 by dgomez-p          #+#    #+#             */
+/*   Updated: 2022/03/09 15:33:43 by dgomez-p         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
 #include <stddef.h>
 #include <stdlib.h>

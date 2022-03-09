@@ -1,5 +1,26 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_substr.c                                        :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: dgomez-p <dgomez-p@student.42barcel>       +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/03/09 15:32:46 by dgomez-p          #+#    #+#             */
+/*   Updated: 2022/03/09 15:32:48 by dgomez-p         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include <stddef.h>
 #include <stdlib.h>
+
+char	*ft_malloc(char *str_malloc, int len, int max)
+{
+	if (max <= len)
+		str_malloc = malloc(max + 1);
+	else
+		str_malloc = malloc(len + 1);
+	return (str_malloc);
+}
 
 char	*ft_substr(char const *s, unsigned int start, size_t len)
 {
@@ -13,10 +34,7 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 	while (s[i])
 		i++;
 	max = i - start;
-	if (max <= len)
-		str_malloc = malloc(max + 1);
-	else
-		str_malloc = malloc(len + 1);
+	str_malloc = ft_malloc(str_malloc, len, max);
 	if (str_malloc == NULL)
 		return (NULL);
 	str_new = str_malloc;
