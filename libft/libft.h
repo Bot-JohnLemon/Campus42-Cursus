@@ -6,7 +6,7 @@
 /*   By: dgomez-p <dgomez-p@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/09 15:19:26 by dgomez-p          #+#    #+#             */
-/*   Updated: 2022/03/09 15:31:24 by dgomez-p         ###   ########.fr       */
+/*   Updated: 2022/03/09 16:42:00 by dgomez-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -66,5 +66,7 @@ char			*ft_strmapi(char const *s, char (*f)(unsigned int, char));
 void			ft_striteri(char *s, void (*f)(unsigned int, char*));
 void			ft_putchar_fd(char c, int fd);
 void			ft_putstr_fd(char *s, int fd);
+void			ft_putendl_fd(char *s, int fd);
+void			ft_putnbr_fd(int n, int fd);
 //Here I close the pre-processing directives, adn the program is closed
 #endif

@@ -6,14 +6,14 @@
 /*   By: dgomez-p <dgomez-p@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/09 15:34:00 by dgomez-p          #+#    #+#             */
-/*   Updated: 2022/03/09 15:34:01 by dgomez-p         ###   ########.fr       */
+/*   Updated: 2022/03/09 16:50:13 by dgomez-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
 static char
-	**ft_alloc_split(char const *s, char c)
+	**ft_alloc_split(char *s, char c)
 {
 	size_t	i;
 	char	**split;
@@ -94,7 +94,7 @@ char
 {
 	char	**split;
 
-	split = ft_alloc_split(s, c);
+	split = ft_alloc_split((char *)s, c);
 	if (!split)
 		return (NULL);
 	if (!ft_split_by_char(split, s, c))

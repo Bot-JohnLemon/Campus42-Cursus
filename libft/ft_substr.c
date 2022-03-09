@@ -6,7 +6,7 @@
 /*   By: dgomez-p <dgomez-p@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/09 15:32:46 by dgomez-p          #+#    #+#             */
-/*   Updated: 2022/03/09 15:32:48 by dgomez-p         ###   ########.fr       */
+/*   Updated: 2022/03/09 16:33:24 by dgomez-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,14 +30,15 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 	size_t	max;
 
 	str_new = NULL;
+	str_malloc = NULL;
 	i = 0;
 	while (s[i])
 		i++;
 	max = i - start;
 	str_malloc = ft_malloc(str_malloc, len, max);
+	str_new = str_malloc;
 	if (str_malloc == NULL)
 		return (NULL);
-	str_new = str_malloc;
 	i = 0;
 	while ((len--) && (s[start]))
 	{

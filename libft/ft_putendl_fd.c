@@ -6,13 +6,13 @@
 /*   By: dgomez-p <dgomez-p@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/09 15:34:09 by dgomez-p          #+#    #+#             */
-/*   Updated: 2022/03/09 15:34:11 by dgomez-p         ###   ########.fr       */
+/*   Updated: 2022/03/09 16:42:49 by dgomez-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <libft.h>
 
-void	ft_putendl_fd(char const *s, int fd)
+void	ft_putendl_fd(char *s, int fd)
 {
 	ft_putstr_fd(ft_strjoin(s, "\n"), fd);
 }

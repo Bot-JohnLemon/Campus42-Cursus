@@ -6,13 +6,13 @@
 /*   By: dgomez-p <dgomez-p@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/09 15:34:04 by dgomez-p          #+#    #+#             */
-/*   Updated: 2022/03/09 15:34:05 by dgomez-p         ###   ########.fr       */
+/*   Updated: 2022/03/09 16:38:54 by dgomez-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <libft.h>
 
-void	ft_putstr_fd(char const *s, int fd)
+void	ft_putstr_fd(char *s, int fd)
 {
 	while (s && *s)
 		ft_putchar_fd(*s++, fd);

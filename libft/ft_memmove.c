@@ -6,7 +6,7 @@
 /*   By: dgomez-p <dgomez-p@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/09 15:34:17 by dgomez-p          #+#    #+#             */
-/*   Updated: 2022/03/09 15:34:18 by dgomez-p         ###   ########.fr       */
+/*   Updated: 2022/03/09 16:16:21 by dgomez-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,7 @@ void	*ft_memmove(void *dst, const void *src, size_t n)
 	const char	*src_aux;
 	char		*temp;	
 
+	temp = NULL;
 	src_aux = src;
 	dst_aux = dst;
 	i = 0;
