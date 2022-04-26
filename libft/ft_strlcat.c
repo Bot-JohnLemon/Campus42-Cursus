@@ -6,34 +6,36 @@
 /*   By: dgomez-p <dgomez-p@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/09 15:33:42 by dgomez-p          #+#    #+#             */
-/*   Updated: 2022/03/09 15:33:43 by dgomez-p         ###   ########.fr       */
+/*   Updated: 2022/04/25 12:48:53 by johnlemon        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stddef.h>
 #include <stdlib.h>
+#include "libft.h"
 
-size_t	ft_strlcat(char *dst, const char *src, size_t dstsize)
+size_t
+	ft_strlcat(char *dst, const char *src, size_t size)
 {
-	size_t	src_index;
-	size_t	offset;
-	size_t	s_len;
-	size_t	d_len;
+	size_t	i;
+	size_t	j;
+	size_t	dest_length;
+	size_t	src_length;
 
-	src_index = 0;
-	offset = 0;
-	d_len = 0;
-	s_len = 0;
-	while (src[s_len] != '\0')
-		s_len++;
-	while (dst[d_len] != '\0')
-		d_len++;
-	offset = d_len;
-	while ((src[src_index] != '\0') && (offset != dstsize))
+	src_length = ft_strlen(src);
+	dest_length = ft_strlen(dst);
+	j = dest_length;
+	i = 0;
+	if (dest_length < size - 1 && size > 0)
 	{
-		dst[offset] = src[src_index];
-		offset++;
-		src_index++;
+		while (src[i] && dest_length + i < size - 1)
+		{
+			dst[j] = src[i];
+			j++;
+			i++;
+		}
+		dst[j] = 0;
 	}
-	return (d_len + s_len);
+	if (dest_length >= size)
+		dest_length = size;
+	return (dest_length + src_length);
 }

@@ -6,54 +6,52 @@
 /*   By: dgomez-p <dgomez-p@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/09 15:34:33 by dgomez-p          #+#    #+#             */
-/*   Updated: 2022/03/09 15:34:33 by dgomez-p         ###   ########.fr       */
+/*   Updated: 2022/04/26 20:40:36 by johnlemon        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
-#include <stdlib.h>
+#include "libft.h"
 
-char	*my_malloc(int len)
+static void	lengths(int n, size_t *len, int *weight)
 {
-	char	*string;
+	*len = 1;
+	if (n >= 0)
+	{
+		*len = 0;
+		n = -n;
+	}
+	*weight = 1;
+	while (n / *weight < -9)
+	{
+		*weight *= 10;
+		*len += 1;
+	}
+}
 
-	string = malloc(len + 2);
-	if (string == NULL)
+char	*ft_itoa(int n)
+{
+	size_t		len;
+	int			weight;
+	size_t		cur;
+	char		*str;
+
+	lengths(n, &len, &weight);
+	str = (char *)malloc(sizeof(*str) * (len + 1));
+	if (str == NULL)
 		return (NULL);
-	return (string);
-}
-
-char	*convert(char *string, int i, int power)
-{
-	while (power > 0)
+	cur = 0;
+	if (n < 0)
 	{
-	*string++ = '0' + i / power;
-	i %= power;
-	power /= 10;
+		str[cur] = '-';
+		cur++;
 	}
-	*string = '\0';
-	return (string);
-}
-
-char	*ft_itoa(int i)
-{
-	int		power;
-	int		j;
-	int		len;
-	char	*string;
-	char	*str;
-
-	power = 1;
-	j = i;
-	len = 0;
-	while (j > 10)
+	if (n > 0)
+		n = -n;
+	while (weight >= 1)
 	{
-	power *= 10;
-	j /= 10;
-	len++;
+		str[cur++] = -(n / weight % 10) + 48;
+		weight /= 10;
 	}
-	string = my_malloc(len);
-	str = string;
-	string = convert(string, i, power);
+	str[cur] = '\0';
 	return (str);
 }

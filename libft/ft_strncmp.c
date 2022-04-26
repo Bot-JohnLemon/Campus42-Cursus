@@ -6,28 +6,34 @@
 /*   By: dgomez-p <dgomez-p@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/09 15:33:22 by dgomez-p          #+#    #+#             */
-/*   Updated: 2022/03/09 15:33:23 by dgomez-p         ###   ########.fr       */
+/*   Updated: 2022/04/25 12:47:32 by johnlemon        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdlib.h>
+#include "libft.h"
 
-int	ft_strncmp(const char *s1, const char *s2, size_t n)
+static int
+	cmp_char(char c1, char c2)
 {
-	int	diff;
+	if ((unsigned char)c1 != (unsigned char)c2)
+		return ((unsigned char)c1 - (unsigned char)c2);
+	return (0);
+}
 
-	diff = 0;
-	while ((*s2 != '\0') && (n > 0))
+int
+	ft_strncmp(const char *s1, const char *s2, size_t n)
+{
+	size_t			i;
+
+	i = 0;
+	while (s1[i] && s2[i] && i < n)
 	{
-		if (*s1 != *s2)
-		{
-			diff = *s1 - *s2;
-			return (diff);
-		}
-		s1++;
-		s2++;
-		n--;
+		if (cmp_char(s1[i], s2[i]))
+			return (s1[i] - s2[i]);
+		i++;
 	}
-	diff = *s1 - *s2;
-	return (diff);
+	if (i < n)
+		return (cmp_char(s1[i], s2[i]));
+	return (0);
 }

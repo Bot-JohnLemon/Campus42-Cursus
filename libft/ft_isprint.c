@@ -6,13 +6,13 @@
 /*   By: dgomez-p <dgomez-p@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/09 15:34:35 by dgomez-p          #+#    #+#             */
-/*   Updated: 2022/03/09 15:34:35 by dgomez-p         ###   ########.fr       */
+/*   Updated: 2022/04/26 20:19:33 by johnlemon        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include <libft.h>
+
 int	ft_isprint(int c)
 {
-	if ((c >= 32) && (c <= 127))
-		return (1);
-	return (0);
+	return (c >= 32 && c < 127);
 }

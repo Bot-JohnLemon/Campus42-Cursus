@@ -6,28 +6,22 @@
 /*   By: dgomez-p <dgomez-p@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/09 15:35:05 by dgomez-p          #+#    #+#             */
-/*   Updated: 2022/03/09 15:35:06 by dgomez-p         ###   ########.fr       */
+/*   Updated: 2022/04/26 20:18:50 by johnlemon        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h>
-#include <stdio.h>
+#include "libft.h"
 
-void	*ft_calloc(size_t number, size_t size)
+void	*ft_calloc(size_t count, size_t size)
 {
-	int		*array_aux;
-	void	*array_malloc;
-	size_t	i;
+	char	*p;
 
-	i = 0;
-	array_malloc = malloc(number * size);
-	if (array_malloc == NULL)
+	if (count == 0 || size == 0)
 		return (NULL);
-	array_aux = (int *)array_malloc;
-	while (i < number)
-	{	
-		*(array_aux + i) = 0;
-		i++;
+	else
+	{
+		p = malloc(count * size);
+		ft_bzero(p, count * size);
+		return (p);
 	}
-	return (array_aux);
 }

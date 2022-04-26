@@ -6,26 +6,34 @@
 /*   By: dgomez-p <dgomez-p@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/09 15:35:09 by dgomez-p          #+#    #+#             */
-/*   Updated: 2022/03/09 15:35:10 by dgomez-p         ###   ########.fr       */
+/*   Updated: 2022/04/26 20:17:45 by johnlemon        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdio.h>
+#include <libft.h>
 
 int	ft_atoi(const char *str)
 {
-	int		val;
-	char	*str_aux;
 	int		i;
+	int		num;
+	int		sign;
 
-	str_aux = (char *) str;
-	val = 0;
 	i = 0;
-	while ((str_aux[i] != '\0') && (str_aux[i] >= 48) && (str_aux[i] <= 57))
-	{
-		val = (val + (str_aux[i] % 48)) * 10;
+	num = 0;
+	sign = 1;
+	while (*(str + i) == '\n'
+		|| *(str + i) == '\t'
+		|| *(str + i) == '\r'
+		|| *(str + i) == '\v'
+		|| *(str + i) == '\f'
+		|| *(str + i) == ' ')
 		i++;
-	}
-	val = val / 10;
-	return (val);
+	if (*(str + i) == '-')
+		sign = -1;
+	if (*(str + i) == '-' || *(str + i) == '+')
+		i++;
+	while (*(str + i) && *(str + i) >= '0' && *(str + i) <= '9')
+		num = num * 10 + (*(str + i++) - '0');
+	return (num * sign);
 }
