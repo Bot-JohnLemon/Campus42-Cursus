@@ -6,14 +6,14 @@
 /*   By: dgomez-p <dgomez-p@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/09 15:19:26 by dgomez-p          #+#    #+#             */
-/*   Updated: 2022/04/28 14:38:27 by dgomez-p         ###   ########.fr       */
+/*   Updated: 2022/04/28 15:29:19 by dgomez-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 //Those are the pre-processing direcctives
 #ifndef LIBFT_H
 # define LIBFT_H
-//Here im including some standart libraries
+//Here ikm including some standart libraries
 # include <stdlib.h>
 # include <unistd.h>
 

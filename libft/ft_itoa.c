@@ -6,7 +6,7 @@
 /*   By: dgomez-p <dgomez-p@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/09 15:34:33 by dgomez-p          #+#    #+#             */
-/*   Updated: 2022/04/26 20:40:36 by johnlemon        ###   ########.fr       */
+/*   Updated: 2022/04/28 16:31:57 by dgomez-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,7 +36,7 @@ char	*ft_itoa(int n)
 	char		*str;
 
 	lengths(n, &len, &weight);
-	str = (char *)malloc(sizeof(*str) * (len + 1));
+	str = (char *)malloc(sizeof(*str) * (len + 2));
 	if (str == NULL)
 		return (NULL);
 	cur = 0;

@@ -6,7 +6,7 @@
 /*   By: dgomez-p <dgomez-p@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/09 15:34:00 by dgomez-p          #+#    #+#             */
-/*   Updated: 2022/03/09 16:50:13 by dgomez-p         ###   ########.fr       */
+/*   Updated: 2022/04/28 17:37:35 by dgomez-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,13 +23,16 @@ static char
 	total = 0;
 	while (s[i])
 	{
-		if (s[i] == c)
+		if (i != 0 && s[i] == c && s[i -1] != c)
 			total++;
 		i++;
 	}
-	split = (char **)malloc(sizeof(s) * (total + 2));
+	if (i > 0 && s[i - 1] != c)
+		total++;
+	split = (char **)malloc(sizeof(char *) * (total + 1));
 	if (!split)
 		return (NULL);
+	split[total] = NULL;
 	return (split);
 }
 

@@ -6,7 +6,7 @@
 /*   By: dgomez-p <dgomez-p@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/09 15:33:22 by dgomez-p          #+#    #+#             */
-/*   Updated: 2022/04/25 12:47:32 by johnlemon        ###   ########.fr       */
+/*   Updated: 2022/04/28 15:57:46 by dgomez-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,7 @@ int
 	while (s1[i] && s2[i] && i < n)
 	{
 		if (cmp_char(s1[i], s2[i]))
-			return (s1[i] - s2[i]);
+			return ((unsigned char)s1[i] - (unsigned char)s2[i]);
 		i++;
 	}
 	if (i < n)
