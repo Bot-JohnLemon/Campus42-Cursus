@@ -6,7 +6,7 @@
 /*   By: dgomez-p <dgomez-p@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/09 15:33:51 by dgomez-p          #+#    #+#             */
-/*   Updated: 2022/03/09 15:33:54 by dgomez-p         ###   ########.fr       */
+/*   Updated: 2022/04/28 14:48:29 by dgomez-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,5 +33,6 @@ char	*ft_strdup(const char *src)
 		*(str_aux + i) = *(src + i);
 		i++;
 	}
+	str_aux[i] = '\0';
 	return (str_aux);
 }
