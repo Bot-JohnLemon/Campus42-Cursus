@@ -6,12 +6,11 @@
 /*   By: dgomez-p <dgomez-p@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/09 15:35:09 by dgomez-p          #+#    #+#             */
-/*   Updated: 2022/04/26 20:17:45 by johnlemon        ###   ########.fr       */
+/*   Updated: 2022/05/03 16:59:24 by dgomez-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
-#include <libft.h>
+#include "libft.h"
 
 int	ft_atoi(const char *str)
 {

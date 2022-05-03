@@ -6,7 +6,7 @@
 /*   By: dgomez-p <dgomez-p@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/09 15:19:26 by dgomez-p          #+#    #+#             */
-/*   Updated: 2022/04/28 15:29:19 by dgomez-p         ###   ########.fr       */
+/*   Updated: 2022/05/03 17:15:30 by dgomez-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@
 //Here ikm including some standart libraries
 # include <stdlib.h>
 # include <unistd.h>
-
+# include <stdio.h>
 //Here I created the structures of some C functions
 typedef struct s_list
 {

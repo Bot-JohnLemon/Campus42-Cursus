@@ -6,11 +6,13 @@
 /*   By: dgomez-p <dgomez-p@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/09 15:33:29 by dgomez-p          #+#    #+#             */
-/*   Updated: 2022/03/09 15:33:30 by dgomez-p         ###   ########.fr       */
+/*   Updated: 2022/05/03 17:23:44 by dgomez-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_strlen(const char *str)
+#include "libft.h"
+
+size_t	ft_strlen(const char *str)
 {
 	unsigned int	c;
 

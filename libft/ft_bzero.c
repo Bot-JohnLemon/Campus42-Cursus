@@ -6,11 +6,11 @@
 /*   By: dgomez-p <dgomez-p@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/09 15:35:07 by dgomez-p          #+#    #+#             */
-/*   Updated: 2022/04/28 16:33:34 by dgomez-p         ###   ########.fr       */
+/*   Updated: 2022/05/03 16:59:52 by dgomez-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h>
+#include "libft.h"
 
 void	ft_bzero(void *str, size_t n)
 {
