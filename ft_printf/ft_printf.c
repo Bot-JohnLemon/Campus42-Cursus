@@ -1,23 +1,51 @@
- #include <stdio.h>
+#include <stdio.h>
 #include <stdarg.h>
- 
-void variadic_funct(int count, ...)
+#include "libprintf.h"
+
+int printf(const char *str, ...)
 {
     va_list args;
-    int i;
-    va_start(args, count);
-    printf ("variadic : argument count = %d\n", count);
-    for (i = 0; i < count; i++) {
-     printf("argument %d = %d, ", i + 1, va_arg(args, int));
+    int     i;
+    int     var_len;
+    int     total_len;
+
+    total_len = 0;
+    i = 0;
+    var_len = 0;
+    va_start(args, *);
+    while ((char *)str != '\0')
+    {
+        if ((char *)str + i == '%')
+        {
+            var_len = 0;
+            if ((char *)str + i == 'c')
+                var_len = ft_print_char(va_arg(args, int));
+            else if ((char *)str + i == 's')
+                var_len = ft_print_str(va_arg(args, char *));
+            else if ((char *)str + i == 'p')
+                var_len = ft_print_ptr(va_arg(args, void *));
+            else if ((char *)str + i == 'd')
+                var_len = ft_print_num_b10(va_arg(args, int));
+            else if ((char *)str + i == 'i')
+                var_len = ft_print_num_in_b10(va_arg(args, int));
+            else if ((char *)str + i == 'u')
+                var_len = ft_print_num_b10_no_sign(va_arg(args, unsigned int));
+            else if ((char *)str + i == 'x')
+                var_len = ft_print_num_hex_min(va_arg(args, long int));
+            else if ((char *)str + i == 'X')
+                var_len = ft_print_num_hex_may(va_arg(args, long int));
+            else if ((char *)str + i == '%')
+                var_len = ft_print_percentage(va_arg(args, int));
+        }
+        else
+        {
+            ft_print((char *)str + i);
+            total_len++;
+        }
+        i++;
+        total_len+=var_len;
     }
-    printf ("\n");
-    va_end(args);
+    return total_len; 
 }
- 
-int main(void)
-{
-    variadic_funct(0); 
-    variadic_funct(1,10);
-    variadic_funct(2,10,20);
-    variadic_funct(3,10,20,30);  
-} 
+
+printf("hola %d",10);
